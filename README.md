@@ -1,6 +1,6 @@
 # User Profile System
 
-A secure web application for managing user profiles, built with Flask and PostgreSQL.
+An insecure web application for managing user profiles, built with Flask and PostgreSQL.
 
 ## Features
 
