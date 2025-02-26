@@ -30,8 +30,8 @@ An insecure web application for managing user profiles, built with Flask and Pos
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/user-profile-system.git
-cd user-profile-system
+git clone https://github.com/CyberFvde/VulnerablePortal.git
+cd VulnerablePortal
 ```
 
 2. Install dependencies
