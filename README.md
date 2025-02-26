@@ -89,11 +89,3 @@ The application will be available at `http://localhost:5000`
 ```bash
 gunicorn --bind 0.0.0.0:5000 main:app
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to your branch
-5. Create a Pull Request
