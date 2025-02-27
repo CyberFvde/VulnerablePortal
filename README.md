@@ -92,6 +92,7 @@ gunicorn --bind 0.0.0.0:5001 main:app
 
 ## Secure Fix
 
+```python
 @app.route('/profile/<int:user_id>')
 def profile(user_id):
     # Secure: Ensure the user is authenticated and can only access their own profile
@@ -100,7 +101,7 @@ def profile(user_id):
         return redirect(url_for('login'))
     user = User.query.get_or_404(user_id)
     return render_template('profile.html', user=user)
-Instructions to Fix:
+```
 
 Replace the vulnerable profile route in your app.py with the secure version provided above.
 This version checks if the logged-in user's ID (stored in the session) matches the user ID in the URL.
