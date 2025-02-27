@@ -89,3 +89,20 @@ The application will be available at `http://localhost:5001`
 ```bash
 gunicorn --bind 0.0.0.0:5001 main:app
 ```
+
+## Secure Fix
+
+@app.route('/profile/<int:user_id>')
+def profile(user_id):
+    # Secure: Ensure the user is authenticated and can only access their own profile
+    if 'user_id' not in session or session['user_id'] != user_id:
+        flash('Unauthorized access')
+        return redirect(url_for('login'))
+    user = User.query.get_or_404(user_id)
+    return render_template('profile.html', user=user)
+Instructions to Fix:
+
+Replace the vulnerable profile route in your app.py with the secure version provided above.
+This version checks if the logged-in user's ID (stored in the session) matches the user ID in the URL.
+If the check fails, it flashes an "Unauthorized access" message and redirects the user to the login page.
+This ensures that users can only view their own profiles, preventing unauthorized access.
