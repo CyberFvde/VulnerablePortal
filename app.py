@@ -1,9 +1,18 @@
 import os
+from dotenv import load_dotenv
+import os.path
 import logging
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 from werkzeug.security import generate_password_hash, check_password_hash
+
+# Explicitly load the .env file from the known path
+dotenv_path = '/Users/tfade/VulnerablePortal/.env'
+load_dotenv(dotenv_path)
+
+# Debug: Check that DATABASE_URL is set
+print("DATABASE_URL:", os.environ.get("DATABASE_URL"))
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)

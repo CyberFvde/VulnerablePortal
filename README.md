@@ -51,7 +51,7 @@ SESSION_SECRET=your_secure_secret_key
 python main.py
 ```
 
-The application will be available at `http://localhost:5000`
+The application will be available at `http://localhost:5001`
 
 ## Project Structure
 
@@ -87,5 +87,5 @@ The application will be available at `http://localhost:5000`
 2. Configure environment variables
 3. Use Gunicorn for production server:
 ```bash
-gunicorn --bind 0.0.0.0:5000 main:app
+gunicorn --bind 0.0.0.0:5001 main:app
 ```
